@@ -28,6 +28,7 @@
 	aria-label={isDark ? 'Toggle Light Mode' : 'Toggle Dark Mode'}
 	title={isDark ? 'Toggle Light Mode' : 'Toggle Dark Mode'}
 	on:click={toggleDarkMode}
+    class="w-[24px] h-[24px] border border-[--primary-color] rounded-full p-0.5 flex items-center justify-center"
 >
 	{#if isDark}
 		<svg
