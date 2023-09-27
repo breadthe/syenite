@@ -81,7 +81,7 @@ Remember how I said that swyxkit is opinionated? Well, so is Syenite. It's opini
 
 ## Why Syenite?
 
-Finally, you might wonder why call it *Syenite*? Two reasons.
+Finally, you might wonder why call it *Syenite*? The reasons keep piling up.
 
 I've been reading [The Broken Earth](https://www.goodreads.com/book/show/38496769-the-broken-earth-trilogy) trilogy by N.K. Jemisin and I really liked the feisty personality of one character named Syenite.
 
@@ -89,4 +89,4 @@ In real life, [Syenite](https://en.wikipedia.org/wiki/Syenite) is an igneous roc
 
 Incidentally, it doesn't hurt that both syenite and obsidian are volcanic rocks.
 
-Finally, let me hit you with this knowledge: **S**yeni**te** and **S**vel**te** both start with **S** and and in **te**. 
+Finally, let me hit you with this knowledge: **S**yeni**te** and **S**vel**te** both start with **S** and and in **te** 🤯

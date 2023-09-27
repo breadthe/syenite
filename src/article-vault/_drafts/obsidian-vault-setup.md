@@ -3,7 +3,7 @@ title: WIP Obsidian vault setup
 description: Setting up the Obsidian vault for Syenite
 author:
 author_url:
-published: 2023-09-06T14:30
+published: 2023-09-09T14:30
 updated: 
 tags:
   - syenite
@@ -34,9 +34,10 @@ For now, this is what the vault folder structure looks like.
 
 ![[obsidian-vault-structure.png]]
 
-The vault itself is located in `/src`. Within, there are 3 subfolders of interest:
+The vault itself is located in `/src`. Within, there are 4 subfolders of interest:
 
 - `_assets` contains any images that you link in articles. For example `horse-head.png` is referenced in `markdown-showcase.md` using Obsidian syntax.
+- `_drafts` (not shown in the image) should be used for draft articles that are not yet ready to be published. When ready, move them to one of the `[year]/[month]` folders.
 - `.obsidian` is created automatically by Obsidian, contains Obsidian's settings for the vault, and is ignored by default. If you want to add it to version control, feel free to remove it from `.gitignore`.
 - `2023/09` etc is the article structure. I explained how I ended up with this structure in [[url-and-folder-structure]]. Ultimately it's not too hard to make this flat (or whatever you fancy), just keep in mind that this engine is opinionated, and this is what works for me.
 
