@@ -1,0 +1,67 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --font-weight-semibold: theme('fontWeight.semibold');
+    --ul-padding-left: theme('spacing.8');
+
+    /* These are the default colors for the light theme */
+    --primary-color: theme('colors.blue.600');
+    --bg-color: white;
+    --bg-color-muted: theme('colors.gray.100');
+    --text-color: black;
+    --text-color-muted: theme('colors.gray.600');
+    --border-color: theme('colors.gray.300');
+    --border-color-muted: theme('colors.gray.100');
+}
+
+:root.dark {
+    /* These are the default colors for the dark theme */
+    --primary-color: theme('colors.blue.500');
+    --bg-color: theme('colors.gray.900');
+    --bg-color-muted: theme('colors.gray.800');
+    --text-color: white;
+    --text-color-muted: theme('colors.gray.400');
+    --border-color: theme('colors.gray.600');
+    --border-color-muted: theme('colors.gray.800');
+}
+
+/* Restores Markdown list styles that were overridden by Tailwind */
+@layer base {
+    ol {
+        list-style-type: decimal;
+    }
+
+    ul {
+        list-style-type: disc;
+    }
+
+    ol, ul {
+        list-style-position: inside;
+    }
+}
+
+html {
+    font-family: -apple-system, "system-ui", "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+body {
+    min-height: 100vh;
+    overflow: auto;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+a {
+    color: var(--primary-color);
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+hr {
+    border-bottom: theme('borderWidth.DEFAULT') solid var(--border-color);
+}
