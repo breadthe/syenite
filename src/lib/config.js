@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://example.com'
+export const SITE_URL = 'https://syenite.vercel.app'
 export const SITE_TITLE = 'Syenite'
 export const SITE_DESCRIPTION = 'Blog engine with SvelteKit + Obsidian'
 export const DEFAULT_OG_IMAGE = SITE_URL + '/og.jpeg'
