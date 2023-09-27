@@ -11,5 +11,5 @@
         <a href="/">GitHub</a>
     </div>
 
-    <p>© {new Date().getFullYear()}</p>
+    <p>License: <a href="https://opensource.org/licenses/MIT">MIT</a></p>
 </footer>
