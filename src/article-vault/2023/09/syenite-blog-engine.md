@@ -3,7 +3,7 @@ title: Syenite blog engine
 description: The how and why behind the Syenite blog engine
 author:
 author_url:
-published: 2023-09-01T14:30
+published: 2023-09-20T14:30
 updated: 
 tags:
   - syenite

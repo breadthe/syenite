@@ -3,7 +3,7 @@ title: Syenite features
 description: All the features supported by the Syenite blog engine
 author:
 author_url:
-published: 2023-09-02T14:30
+published: 2023-09-21T14:30
 updated: 
 tags:
   - syenite

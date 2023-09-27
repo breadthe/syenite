@@ -3,7 +3,7 @@ title: Markdown showcase
 description: All the supported markdown symbols, as a means to illustrate and visualize markdown rendering and styling
 author: GitHub
 author_url: https://github.com
-published: 2023-09-29T14:30
+published: 2023-09-27T14:30
 updated:
 tags:
   - markdown

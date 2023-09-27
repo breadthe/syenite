@@ -3,7 +3,7 @@ title: Syenite building blocks
 description: A high level overview of how Syenite is constructed
 author:
 author_url:
-published: 2023-09-03T14:30
+published: 2023-09-22T14:30
 updated: 
 tags:
   - syenite

@@ -3,7 +3,7 @@ title: Syenite wishlist
 description: Future features that are planned or desired
 author:
 author_url:
-published: 2023-09-04T14:30
+published: 2023-09-24T14:30
 updated:
 tags:
   - syenite
@@ -43,6 +43,7 @@ If you haven't already, check out the [[syenite-features|current features]].
 ## Styling
 
 - Mobile main nav
+- Full height layout - currently pages or articles with very little content look weird with the site footer almost pushing up against the header
 
 ## Fixes
 

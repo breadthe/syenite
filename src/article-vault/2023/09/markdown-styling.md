@@ -3,7 +3,7 @@ title: Markdown styling
 description: How I styled the markdown content
 author:
 author_url:
-published: 2023-09-05T14:30
+published: 2023-09-25T14:30
 updated:
 tags:
   - markdown
@@ -53,3 +53,5 @@ In `markdown.css`, you'll see references such as:
 You'll find the CSS tokens (is this even the right term? whatever) like `--border-color` defined in `src/css/app.postcss` right at the top.
 
 If you wish to further customize my custom stylesheet, the sky is the limit. You can, for example, extract `font-family`, `font-size` or anything else.
+
+The included CSS is just a starter example, so go wild!

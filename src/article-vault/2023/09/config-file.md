@@ -3,7 +3,7 @@ title: Config file
 description: How to configure global site parameters using the config file
 author:
 author_url:
-published: 2023-09-05T14:30
+published: 2023-09-26T14:30
 updated: 
 tags:
   - syenite
@@ -20,7 +20,7 @@ Parameter | Default value
 SITE_URL | `'https://example.com'`
 SITE_TITLE | `'Syenite'`
 SITE_DESCRIPTION | `'Blog engine with SvelteKit + Obsidian'`
-DEFAULT_OG_IMAGE | `SITE_URL + '/example.jpeg'`
+DEFAULT_OG_IMAGE | `SITE_URL + '/og.jpeg'`
 AUTHOR | `'breadthe'`
 AUTHOR_URL | `'https://github.com/breadthe'`
 AUTHOR_TWITTER_HANDLE  | `''`
@@ -30,3 +30,5 @@ You can import any of these parameters in any file with
 ```js
 import { AUTHOR, AUTHOR_URL } from '$lib/config.js'
 ```
+
+Any asset referenced from the root, such as `og.jpeg` can be found in `/static`.

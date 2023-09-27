@@ -1,9 +1,9 @@
 ---
 title: URL and folder structure
-description: The folder-based URL structure
+description: How the folder-based URL structure was designed
 author:
 author_url:
-published: 2023-09-04T14:30
+published: 2023-09-23T14:30
 updated: 
 tags:
   - syenite
