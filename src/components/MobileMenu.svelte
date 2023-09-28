@@ -19,16 +19,16 @@
 	}
 </script>
 
-<div class="ml-2 sm:hidden">
+<div class="sm:hidden">
 	<button
-		class="burger visible"
+		class="visible h-full"
 		aria-label="Toggle menu"
 		type="button"
 		on:click={() => (isOpen = !isOpen)}
 	>
 		{#if !isOpen}
 			<svg
-				viewBox="0 0 15 15"
+				viewBox="0 0 16 16"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
 				width="16"
@@ -39,7 +39,7 @@
 			</svg>
 		{:else}
 			<svg
-                viewBox="0 0 15 15"
+                viewBox="0 0 16 16"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -69,25 +69,6 @@
 </div>
 
 <style lang="postcss">
-	.burger {
-		transition: opacity 300ms ease;
-		border: 0;
-		background: transparent;
-		width: 40px;
-		height: 40px;
-		position: relative;
-	}
-
-	.burger svg {
-		transform: translate(-50%, -50%) scale(1);
-		top: 50%;
-		left: 50%;
-		opacity: 1;
-		transition:
-			opacity 300ms ease,
-			transform 300ms ease;
-	}
-
 	.menu li {
 		transform: translateX(-16px);
 		opacity: 0;
