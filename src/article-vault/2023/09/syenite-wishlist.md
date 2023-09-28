@@ -38,12 +38,14 @@ If you haven't already, check out the [[syenite-features|current features]].
 - More configurable parameters in `config.js`
 - Separate `article-vault` repo from blog engine
 - Article reading time estimator
+	- see https://github.com/lbenie/reading-time-estimator
+	- see implementation https://github.com/hendrikmitk/hendrikharlichs/blob/main/src/routes/notes/%5Bslug%5D/%2Bpage.ts
 - Syenite icon :)
 
 ## Styling
 
-- Mobile main nav
 - Full height layout - currently pages or articles with very little content look weird with the site footer almost pushing up against the header
+- Page transitions (see https://joshcollinsworth.com/blog/sveltekit-page-transitions)
 
 ## Fixes
 

@@ -31,6 +31,7 @@ These are all the features that the Syenite blog engine currently offers. Check 
 - **RSS** feed (`/rss.xml`)
 - **Sitemap** (`/sitemap.xml`)
 - **Light / dark** mode with persistence in `localStorage`
+- **Mobile** main **nav**
 - **Linkable** article **headings**
 - Automatic **table of contents** from article headings (H1, H2, etc)
 - Links to the **previous** and **next article** at the bottom of each article
