@@ -5,6 +5,6 @@
     export let href
 </script>
 
-<a {href} class:font-bold={isActive}>
+<a {href} class:font-bold={isActive} on:click>
 	<slot />
 </a>

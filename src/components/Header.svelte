@@ -2,26 +2,28 @@
 	import DarkModeToggle from './DarkModeToggle.svelte'
 	import GitHubLink from './GitHubLink.svelte'
 	import NavLink from './NavLink.svelte'
+	import MobileMenu from './MobileMenu.svelte'
+
+    const links = [
+        { name: 'Home', href: '/' },
+        { name: 'Blog', href: '/blog' },
+        { name: 'About', href: '/about' },
+        { name: 'Uses', href: '/uses' },
+        { name: 'Contact', href: '/contact' },
+    ]
+
 </script>
 
 <header class="max-w-4xl mx-auto py-4 sm:py-6 md:py-8">
 	<nav class="mx-4 flex flex-wrap justify-between gap-4">
-		<ul class="list-none flex gap-8">
-			<li>
-				<NavLink href="/">Home</NavLink>
-			</li>
-			<li>
-				<NavLink href="/blog">Blog</NavLink>
-			</li>
-			<li>
-				<NavLink href="/about">About</NavLink>
-			</li>
-			<li>
-				<NavLink href="/uses">Uses</NavLink>
-			</li>
-			<li>
-				<NavLink href="/contact">Contact</NavLink>
-			</li>
+        <MobileMenu {links} />
+
+        <ul class="list-none hidden sm:flex gap-8">
+            {#each links as link}
+                <li>
+                    <NavLink href={link.href}>{link.name}</NavLink>
+                </li>
+            {/each}
 		</ul>
 
         <div class="flex items-center gap-2">
