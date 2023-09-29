@@ -5,20 +5,20 @@
 	export let article;
 </script>
 
-<article class="flex flex-col gap-1">
-	<h2 class="text-xl font-semibold">
-		<a href={article.path}>
-			{article.meta.title}
-		</a>
-	</h2>
+<article class="flex flex-col gap-2">
+	<div class="flex flex-col sm:flex-row gap-2 sm:gap-4 sm:items-center justify-between">
+		<h2 class="text-xl font-semibold">
+			<a href={article.path}>
+				{article.meta.title}
+			</a>
+		</h2>
 
-	<div class="flex gap-4 items-center justify-between">
-		<small class="text-sm">{prettyDate(article.meta.published)}</small>
-
-		<Tags tags={article.meta.tags} />
+		<small class="text-sm italic">{prettyDate(article.meta.published)}</small>
 	</div>
 
-    <div class="text-[--text-color-muted]">
-        {article.meta.description}
-    </div>
+	<div class="text-[--text-color-muted]">
+		{article.meta.description}
+	</div>
+
+	<Tags tags={article.meta.tags} />
 </article>
