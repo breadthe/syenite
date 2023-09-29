@@ -36,6 +36,7 @@ If you haven't already, check out the [[syenite-features|current features]].
 - Blog index pagination
 - More configurable parameters in `config.js`
 - Separate `article-vault` repo from blog engine
+- [utteranc.es](https://utteranc.es/) integration
 - Article reading time estimator
 	- see https://github.com/lbenie/reading-time-estimator
 	- see implementation https://github.com/hendrikmitk/hendrikharlichs/blob/main/src/routes/notes/%5Bslug%5D/%2Bpage.ts

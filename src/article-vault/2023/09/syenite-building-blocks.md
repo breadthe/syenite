@@ -4,7 +4,7 @@ description: A high level overview of how Syenite is constructed
 author:
 author_url:
 published: 2023-09-22T14:30
-updated: 
+updated: 2023-09-29T14:30
 tags:
   - syenite
   - obsidian
@@ -82,3 +82,7 @@ Similarly, a heading containing inline code such as
 ```
 
 should resolve to `/2023/09/url-and-folder-structure#static-pages-as-md-files`.
+
+## Other
+
+Additionally, Syenite uses several [[3rd-party-services|tools and services]] to make life easier.
