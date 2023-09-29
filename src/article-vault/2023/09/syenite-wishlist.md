@@ -31,7 +31,6 @@ If you haven't already, check out the [[syenite-features|current features]].
 
 ## General
 
-- 404 page(s)
 - Article search
 - Mastodon mentions
 - Blog index pagination
