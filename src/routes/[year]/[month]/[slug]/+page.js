@@ -1,10 +1,19 @@
 import { AUTHOR, AUTHOR_URL } from '$lib/config.js'
+import { error } from '@sveltejs/kit';
 
 export async function load({ params, url, fetch }) {
-    const post = await import(`../../../../article-vault/${params.year}/${params.month}/${params.slug}.md`)
+
+    let article = null
+
+    try {
+        article = await import(`../../../../article-vault/${params.year}/${params.month}/${params.slug}.md`)
+    } catch (e) {
+        throw error(404, `Could not find article <strong>${params.slug}</strong>`)
+    }
+
     const slug = params.slug
-    const content = post.default
-    const { title, description, author, author_url, published, updated, tags } = post.metadata
+    const content = article.default
+    const { title, description, author, author_url, published, updated, tags } = article.metadata
 
     // Build previous and next article links
     const response = await fetch(`/api/articles`)
