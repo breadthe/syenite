@@ -19,8 +19,8 @@
 	<a href="/blog/tags" title="Tags index">All tags</a>
 </Heading>
 
-{#each data.tags.keys() as tag}
+{#each Object.keys(data.tags) as tag}
 	<hr />
 
-	<TagCard {tag} articles={data.tags.get(tag)} />
+	<TagCard {tag} articles={data.tags[tag]} />
 {/each}
