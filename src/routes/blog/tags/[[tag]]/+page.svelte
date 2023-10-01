@@ -1,13 +1,11 @@
 <script>
-    import { SITE_TITLE } from '$lib/config.js';
+	import { SITE_TITLE } from '$lib/config.js';
 	import Heading from '$components/Heading.svelte';
 	import TagCard from '$components/TagCard.svelte';
 
 	export let data;
 
-    $: title = data.isTagsIndex
-        ? 'All tags'
-        : `Articles tagged: ${data.currentTag}`
+	$: title = data.isTagsIndex ? 'All tags' : `Articles tagged: ${data.currentTag}`;
 </script>
 
 <svelte:head>
@@ -16,11 +14,15 @@
 </svelte:head>
 
 <Heading>
-	<a href="/blog/tags" title="Tags index">All tags</a>
+	{#if data.isTagsIndex}
+		{title}
+	{:else}
+		<a href="/blog/tags" title="Tags index">All tags</a>
+	{/if}
 </Heading>
 
 {#each Object.keys(data.tags) as tag}
 	<hr />
 
-	<TagCard {tag} articles={data.tags[tag]} />
+	<TagCard {tag} currentTag={data.currentTag} articles={data.tags[tag]} />
 {/each}
