@@ -4,7 +4,7 @@ description: Future features that are planned or desired
 author:
 author_url:
 published: 2023-09-24T14:30
-updated:
+updated: 2023-10-04T09:30
 tags:
   - syenite
 ---
@@ -26,7 +26,6 @@ If you haven't already, check out the [[syenite-features|current features]].
 ## Content/SEO
 
 - Hero image in frontmatter
-- "More articles tagged xxx" at bottom of article
 - "Latest (10) articles" component, to be used on landing page and/or bottom of each article
 
 ## General

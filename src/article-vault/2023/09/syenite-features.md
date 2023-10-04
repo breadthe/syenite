@@ -4,7 +4,7 @@ description: All the features supported by the Syenite blog engine
 author:
 author_url:
 published: 2023-09-21T14:30
-updated: 
+updated: 2023-10-04T09:30
 tags:
   - syenite
 ---
@@ -38,6 +38,10 @@ These are all the features that the Syenite blog engine currently offers. Check 
 - Configurable **Author name** & **URL**, overwritten in frontmatter
 - Page/article header **metadata** and [open graph](https://ogp.me/) tags
 - **TypeScript** support, although I've made zero effort to implement anything in TS
+
+## Content/SEO
+
+- "More articles tagged xxx" at the bottom of articles
 
 ## Styling
 
