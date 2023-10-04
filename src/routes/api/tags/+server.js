@@ -1,8 +1,8 @@
 import { fetchMarkdownArticles } from '$lib/utils'
 import { json } from '@sveltejs/kit'
 
-export const GET = async ({ params }) => {
-    const { tag } = params
+export const GET = async ({ url }) => {
+    const tag = url.searchParams.get('tag')
 
     const tags = new Map()
 

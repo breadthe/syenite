@@ -4,7 +4,7 @@ export const load = async ({ fetch, params }) => {
     const { tag } = params
     let serverUrl = `/api/tags`
 
-    if (tag) serverUrl += `/${tag}`
+    if (tag) serverUrl += `?tag=${tag}`
 
     const response = await fetch(serverUrl)
     const tags = await response.json()
