@@ -1,4 +1,5 @@
 import { fdir } from 'fdir';
+import { OBSIDIAN_VAULT_PATH } from '../../lib/config.js'
 
 // Transforms Obsidian links and images to relative HTML anchors and image links
 export const transformObsidianLinks = ({ content, filename }) => {
@@ -14,8 +15,9 @@ export const transformObsidianLinks = ({ content, filename }) => {
     const transformedContent = content
         .replace(obsidianImageRegex, (_, p1, p2, p3) => {
             const imageFilename = p1.includes('|') ? p1.slice(0, p1.indexOf('|')) : p1
-            const slug = imageFilename.split('.')[0]
-            const extension = imageFilename.split('.')[1]
+            const imageFilenameParts = imageFilename.split('.') // 'syenite-v0.2-mobile-menu.gif' -> ['syenite-v0', '2-mobile-menu', 'gif']
+            const extension = imageFilenameParts.pop() // 'gif'
+            const slug = imageFilenameParts.join('.') // 'syenite-v0.2-mobile-menu'
             const filePathArr = new fdir()
                 .glob(`./**/${slug}.${extension}`)
                 .withRelativePaths()
