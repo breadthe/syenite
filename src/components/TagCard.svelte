@@ -1,5 +1,4 @@
 <script>
-	import Tags from '$components/Tags.svelte';
 	import { prettyDate } from '$lib/utils/index.js';
 
 	export let tag;

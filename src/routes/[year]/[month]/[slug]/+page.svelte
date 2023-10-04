@@ -1,6 +1,7 @@
 <script>
 	import { SITE_URL, AUTHOR_TWITTER_HANDLE } from '$lib/config.js';
 	import { toc, createTocStore } from '@svelte-put/toc';
+	import ArticlesTagged from '$components/ArticlesTagged.svelte';
 	import Heading from '$components/Heading.svelte';
 	import Tags from '$components/Tags.svelte';
 	import TOC from '$components/TableOfContents.svelte';
@@ -59,13 +60,14 @@
 
 	<div slot="description" class="flex flex-col items-center">
 		<div class="flex justify-between gap-8 w-full">
-            <span class="text-sm italic">By:
-                {#if data.author_url}
-                    <a href={data.author_url}>{data.author}</a>
-                {:else}
-                    <span>{data.author}</span>
-                {/if}
-            </span>
+			<span class="text-sm italic">
+				By:
+				{#if data.author_url}
+					<a href={data.author_url}>{data.author}</a>
+				{:else}
+					<span>{data.author}</span>
+				{/if}
+			</span>
 
 			<span class="text-sm italic">{prettyDate(data.published)}</span>
 		</div>
@@ -85,6 +87,16 @@
 
 	<svelte:component this={data.content} />
 </article>
+
+{#if data.tags.length > 0}
+	<hr />
+
+	<h4 class="font-bold text-center">Other articles tagged</h4>
+
+    {#each data.tags as tag}
+		<ArticlesTagged {tag} articlePath={data.path} />
+	{/each}
+{/if}
 
 <hr />
 
