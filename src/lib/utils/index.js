@@ -1,5 +1,4 @@
 import { fdir } from 'fdir';
-import { OBSIDIAN_VAULT_PATH } from '../../lib/config.js'
 
 // Transforms Obsidian links and images to relative HTML anchors and image links
 export const transformObsidianLinks = ({ content, filename }) => {
