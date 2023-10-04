@@ -48,11 +48,11 @@ In other words, we want to convert links:
 and images:
 
 ```
-!\[\[horse-head.png|Horse head image]]
+!\[\[horse-head.png|Horse head]]
 
 👇
 
-<img src="/assets/horse-head.png" title="Horse head image" alt="Horse head image">
+<img src="/assets/horse-head.png" title="Horse head" alt="Horse head">
 ```
 
 This is not trivial. So rather than shattering my brain trying to figure it out, I thought "surely someone else must have done it already". Thankfully, a developer named [Frank Noirot](https://franknoirot.co/) did the legwork and wrote an article about it https://github.com/franknoirot/obsidian-sveltekit-blog/.

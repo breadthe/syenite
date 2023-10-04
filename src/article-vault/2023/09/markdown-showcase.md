@@ -45,7 +45,7 @@ Normal paragraph text.
 
 [[syenite-blog-engine|Link to another Obsidian doc]]
 
-![[horse-head.png|Horse head image]]
+![[horse-head.png|Horse head]]
 
 > No good deed goes unpunished - Albert Einstein
 
