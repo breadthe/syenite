@@ -1,6 +1,6 @@
 ---
 title: Syenite v0.2
-description: New features in Syenite v0.2
+description: "New features in Syenite v0.2: mobile nav, 404 pages, other articles tagged, rewritten tags API, and more"
 author:
 author_url:
 published: 2023-10-04T07:30
