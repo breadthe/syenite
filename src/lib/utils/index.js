@@ -11,6 +11,7 @@ export const transformObsidianLinks = ({ content, filename }) => {
 
     const obsidianImageRegex = /\!\[\[(.+?(\|.+?)?)\]\]([\W])/g
     const obsidianLinkRegex = /\[\[(.+?(\|.+?)?)\]\]([\W])/g
+    const externalLinkRegex = /<a\s+(?:[^>]*?\s+)?href=["'](https?:\/\/[^'"]+)["'][^>]*>.*?<\/a>/g
     const transformedContent = content
         .replace(obsidianImageRegex, (_, p1, p2, p3) => {
             const imageFilename = p1.includes('|') ? p1.slice(0, p1.indexOf('|')) : p1
@@ -43,6 +44,13 @@ export const transformObsidianLinks = ({ content, filename }) => {
             const linkText = p2 ? p2.slice(1) : p1
 
             const linkHtml = `<a href="/${href}">${linkText}</a>` + p3
+            return linkHtml
+        })
+        // External links open in new tab and have a 🔗 emoji
+        .replace(externalLinkRegex, (_, p1, p2, p3) => {
+            let linkHtml = _.replace('href="', 'target="_blank" href="')
+            linkHtml = linkHtml.replace('</a>', ' 🔗</a>');
+
             return linkHtml
         })
 
