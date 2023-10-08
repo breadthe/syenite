@@ -33,17 +33,35 @@ export const transformObsidianLinks = ({ content, filename }) => {
             return linkHtml
         })
         .replace(obsidianLinkRegex, (_, p1, p2, p3) => {
-            const slug = p1.includes('|') ? p1.slice(0, p1.indexOf('|')) : p1
+            let slug = p1.includes('|') ? p1.slice(0, p1.indexOf('|')) : p1
+            let hash = ''
+
+            // Handle links with headings
+            if (slug.includes('#')) {
+                hash = slug.slice(slug.indexOf('#'))
+                slug = slug.slice(0, slug.indexOf('#')) // remove hash from slug
+
+                // Replace non-alphanumeric characters in the hash with dashes
+                hash = '#' + hash
+                    .slice(1) // ignore the leading '#'
+                    .replace(/<\/?code>/g, '') // replace "<code>" or "</code>" with empty string
+                    .replace(/[^a-zA-Z0-9]/g, '-') // replace non-alphanumeric characters with dashes
+                    .replace(/-{2,}/g, '-') // replace multiple dashes with a single dash
+                    .toLowerCase() // lowercase
+            }
+
             const filePathArr = new fdir()
                 .glob(`./**/${slug}.md`)
                 .withRelativePaths()
                 .crawl(`.${vaultDirectory}`)
                 .sync()
+
             const href = `/` + (filePathArr.length === 1) ? filePathArr[0].slice(0, -3) : slug
 
             const linkText = p2 ? p2.slice(1) : p1
 
-            const linkHtml = `<a href="/${href}">${linkText}</a>` + p3
+            const linkHtml = `<a href="/${href}${hash}">${linkText}</a>` + p3
+
             return linkHtml
         })
         // External links open in new tab and have a 🔗 emoji
