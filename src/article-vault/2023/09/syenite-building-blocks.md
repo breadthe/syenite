@@ -4,7 +4,7 @@ description: A high level overview of how Syenite is constructed
 author:
 author_url:
 published: 2023-09-22T14:30
-updated: 2023-09-29T14:30
+updated: 2023-10-08T14:30
 tags:
   - syenite
   - obsidian
@@ -42,7 +42,7 @@ In other words, we want to convert links:
 
 👇
 
-<a href="http://example.com/2023/09/syenite-blog-engine">
+<a href="/2023/09/syenite-blog-engine">Syenite an opinionated blog engine</a>
 ```
 
 and images:
@@ -70,18 +70,26 @@ One Obsidian feature that is unsupported (it will throw a compile error) is refe
 This
 
 ```
-\[\[syenite-blog-engine#The Frankenblog]]
+\[\[syenite-blog-engine#The Frankenblog|Syenite blog engine]]
 ```
 
-should resolve to `/2023/09/syenite-blog-engine#the-frankenblog`.
+should resolve to
+
+```html
+<a href="/2023/09/syenite-blog-engine#the-frankenblog">Syenite blog engine</a>
+```
 
 Similarly, a heading containing inline code such as
 
 ```
-\[\[url-and-folder-structure#Static pages as `.md` files]]
+\[\[url-and-folder-structure#Static pages as `.md` files|URL and folder structure]]
 ```
 
-should resolve to `/2023/09/url-and-folder-structure#static-pages-as-md-files`.
+should resolve to
+
+```html
+<a href="/2023/09/url-and-folder-structure#static-pages-as-md-files">URL and folder structure</a>
+```
 
 ## Other
 

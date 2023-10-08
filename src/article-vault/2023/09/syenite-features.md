@@ -4,7 +4,7 @@ description: All the features supported by the Syenite blog engine
 author:
 author_url:
 published: 2023-09-21T14:30
-updated: 2023-10-04T09:30
+updated: 2023-10-08T09:30
 tags:
   - syenite
 ---
@@ -50,3 +50,4 @@ These are all the features that the Syenite blog engine currently offers. Check 
 - Mobile-friendly / **responsive** layout
 - Colors defined with **CSS tokens** in the main stylesheet (`app.postcss`)
 - **PostCSS** support
+- Separate visual treatment and behavior of internal vs external links. **External links** have a 🔗 icon attached and open in a new tab. To be considered external, a URL must not be relative, and must be prefixed with `http(s)://`.

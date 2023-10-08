@@ -18,10 +18,26 @@ If you haven't already, check out the [[syenite-features|current features]].
 - Handle Obsidian article links with heading references. This doesn't work...
 
 ```
+\[\[syenite-blog-engine#The Frankenblog|Syenite blog engine]]
+```
+
+... but should be transformed to
+
+```html
+<a href="/2023/09/syenite-blog-engine#the-frankenblog">Syenite blog engine</a>
+```
+
+- Handle Obsidian links with headings containing inline code. Similar to the above scenario, this...
+
+```
 \[\[url-and-folder-structure#Static pages as `.md` files|URL and folder structure]]
 ```
 
-... but should be transformed to `http://example.com/2023/09/url-and-folder-structure#static-pages-as-md-files`
+should resolve to...
+
+```html
+<a href="/2023/09/url-and-folder-structure#static-pages-as-md-files">URL and folder structure</a>
+```
 
 ## Content/SEO
 
@@ -48,6 +64,5 @@ If you haven't already, check out the [[syenite-features|current features]].
 
 ## Fixes
 
-- Internal links should have the full URL in the href, not just the relative path, so instead of `/2023/09/markdown-styling` I want `http://example.com/2023/09/markdown-styling`
-- External links should have a little ↗ icon attached
-- Handle double **Updated** scenario (when both `updated` frontmatter is set and the `UpdatedAt` component is used in the same article)
+- ~~Internal links should have the full URL in the href, not just the relative path, so instead of `/2023/09/markdown-styling` I want `http://example.com/2023/09/markdown-styling`~~ Actually I think I'm ok with relative links for now.
+- Handle double **Updated** scenario (when both `updated` frontmatter is set and the `UpdatedAt` component is used in the same article). Not super high priority, since this can be handled simply by not using the Updated component.
