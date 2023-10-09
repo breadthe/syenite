@@ -21,16 +21,10 @@
 
 <Header />
 
-<main class="max-w-4xl mx-auto">
+<main class="w-full max-w-4xl mx-auto flex-1">
 	<section class="flex flex-col gap-2 sm:gap-4 mx-4">
 		<slot />
 	</section>
 </main>
 
 <Footer />
-
-<style>
-	main {
-		height: 100%;
-	}
-</style>

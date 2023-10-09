@@ -14,7 +14,7 @@
 
 </script>
 
-<header class="max-w-4xl mx-auto py-4 sm:py-6 md:py-8">
+<header class="w-full max-w-4xl mx-auto py-4 sm:py-6 md:py-8">
 	<nav class="mx-4 flex flex-wrap justify-between gap-4">
         <MobileMenu {links} />
 
