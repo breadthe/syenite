@@ -18,6 +18,7 @@ These are all the features that the Syenite blog engine currently offers. Check 
 - Use [Obsidian](https://obsidian.md/) to author articles, with support for:
 	- linking other Obsidian documents in the same vault
 	- linking images in the same vault
+	- linking headings in another document
 - YAML [frontmatter](https://mdsvex.com/docs#frontmatter-1) for article metadata
 - Create **pages** with **Svelte** components (see `/about`) or **markdown** (see `/uses`)
 - Create **drafts** in `_drafts` and drag them to the corresponding `[year]/[month]/` when the article is ready to be published

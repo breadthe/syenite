@@ -4,7 +4,7 @@ description: Future features that are planned or desired
 author:
 author_url:
 published: 2023-09-24T14:30
-updated: 2023-10-04T09:30
+updated: 2023-10-08T09:30
 tags:
   - syenite
 ---
@@ -13,31 +13,7 @@ This is a list of features that I would like Syenite to have. None of these is g
 
 If you haven't already, check out the [[syenite-features|current features]].
 
-## Authoring (markdown + Obsidian)
-
-- Handle Obsidian article links with heading references. This doesn't work...
-
-```
-\[\[syenite-blog-engine#The Frankenblog|Syenite blog engine]]
-```
-
-... but should be transformed to
-
-```html
-<a href="/2023/09/syenite-blog-engine#the-frankenblog">Syenite blog engine</a>
-```
-
-- Handle Obsidian links with headings containing inline code. Similar to the above scenario, this...
-
-```
-\[\[url-and-folder-structure#Static pages as `.md` files|URL and folder structure]]
-```
-
-should resolve to...
-
-```html
-<a href="/2023/09/url-and-folder-structure#static-pages-as-md-files">URL and folder structure</a>
-```
+For more detailed notes, check out the [[syenite-v0.2|v0.2]] and [[syenite-v0.3|v0.3]] releases.
 
 ## Content/SEO
 
@@ -59,10 +35,12 @@ should resolve to...
 
 ## Styling
 
-- Full height layout - currently pages or articles with very little content look weird with the site footer almost pushing up against the header
 - Page transitions (see https://joshcollinsworth.com/blog/sveltekit-page-transitions)
+- Proper code highlighting
+- Dark mode scroll bars
 
 ## Fixes
 
+- Navigating to a link with a hashmark (heading link) doesn't refresh or re-initialize the table of contents on that page. This is a problem with the TOC library I am using ([explicitly mentioned in the docs](https://svelte-put.vnphanquang.com/docs/toc#no-dynamic-update)).
 - ~~Internal links should have the full URL in the href, not just the relative path, so instead of `/2023/09/markdown-styling` I want `http://example.com/2023/09/markdown-styling`~~ Actually I think I'm ok with relative links for now.
 - Handle double **Updated** scenario (when both `updated` frontmatter is set and the `UpdatedAt` component is used in the same article). Not super high priority, since this can be handled simply by not using the Updated component.
