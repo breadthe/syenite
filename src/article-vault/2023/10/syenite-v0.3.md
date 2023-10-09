@@ -62,6 +62,9 @@ Key highlight here, beside how awesome it is to *link to a specific heading in a
 
 ### 💄 Centered images
 
-- Article images are now centered.
-- Full height layout. The main body of each page now expands to the full height of the window regardless of how little content is on the page.
+Article images are now centered.
+
+### 💄 Full height layout
+
+The main body of each page now expands to the full height of the window regardless of how little content is on the page.
 
