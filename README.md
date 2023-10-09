@@ -51,6 +51,7 @@ The demo site has a series of articles on the inner workings of Syenite.
 - [URL and folder structure](https://syenite.vercel.app/2023/09/url-and-folder-structure)
 - [How the markdown is styled](https://syenite.vercel.app/2023/09/markdown-styling)
 - [The config file](https://syenite.vercel.app/2023/09/config-file)
+- [How the Obsidian vault is set up](https://syenite.vercel.app/2023/09/obsidian-vault-setup)
 - [Markdown styling showcase](https://syenite.vercel.app/2023/09/markdown-showcase)
 
 ## License
