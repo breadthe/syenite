@@ -1,9 +1,48 @@
 <script>
-    import { SITE_TITLE } from '$lib/config.js';
-	import Heading from '$components/Heading.svelte';
-	import ArticleCard from '$components/ArticleCard.svelte';
+    import { SITE_TITLE } from '$lib/config.js'
+	import { queryParam, ssp } from 'sveltekit-search-params'
+    import uFuzzy from '@leeoniya/ufuzzy'
+	import Heading from '$components/Heading.svelte'
+	import ArticleCard from '$components/ArticleCard.svelte'
+	import Search from '$components/Search.svelte'
 
-	export let data;
+    const searchStr = queryParam('search', ssp.string(), { debounceHistory: 500 })
+
+	export let data
+
+    // https://github.com/leeoniya/uFuzzy#options
+	const uf = new uFuzzy({ intraMode: 1 })
+
+    const flatArticles = data.articles.map((article) => {
+        return article.meta.title + ' ' + article.meta.description + ' ' + article.meta.tags.join(' ')
+    })
+
+
+    let idxs = []
+    $: {
+        if ($searchStr) {
+            idxs = uf.filter(flatArticles, $searchStr)
+            const info = uf.info(idxs, flatArticles, $searchStr);
+            const order = uf.sort(info, flatArticles, $searchStr);
+
+            // console.log(idxs)
+            // console.log(info)
+            // console.log(order)
+        } else {
+            idxs = []
+        }
+    }
+
+    let filteredArticles
+    $: {
+        if (idxs.length > 0) {
+            filteredArticles = idxs.map((idx) => {
+                return data.articles[idx]
+            })
+        } else {
+            filteredArticles = data.articles
+        }
+    }
 </script>
 
 <svelte:head>
@@ -24,7 +63,9 @@
 	</p>
 </Heading>
 
-{#each data.articles as article}
+<Search />
+
+{#each filteredArticles as article}
 	<hr />
 
 	<ArticleCard {article} />
