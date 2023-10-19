@@ -47,9 +47,11 @@
 			filteredArticles = idxs.map((idx) => {
 				return data.articles[idx]
 			})
+		} else if ($searchStr) {
+            filteredArticles = []
 		} else {
 			filteredArticles = data.articles
-		}
+        }
 	}
 </script>
 
@@ -71,6 +73,10 @@
 </Heading>
 
 <Search />
+
+{#if $searchStr}
+    <p class="text-center">{filteredArticles.length} result{filteredArticles.length > 1 ? 's' : '' } for "<strong>{$searchStr}</strong>"</p>
+{/if}
 
 {#each filteredArticles as article}
 	<hr />
