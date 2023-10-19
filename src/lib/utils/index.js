@@ -1,4 +1,5 @@
-import { fdir } from 'fdir';
+import { fdir } from 'fdir'
+import { convert } from 'html-to-text'
 
 // Transforms Obsidian links and images to relative HTML anchors and image links
 export const transformObsidianLinks = ({ content, filename }) => {
@@ -89,10 +90,23 @@ export const fetchMarkdownArticles = async () => {
 
     const allArticles = await Promise.all(
         iterableArticlesFiles.map(async ([path, resolver]) => {
-            const { metadata } = await resolver()
+            const article = await resolver()
+            const { metadata } = article
 
             // transforms /src/article-vault/2021/01/article.md to /2021/01/article
             const articlePath = path.replace('article-vault/', '').slice(4, -3)
+
+            // Extracts HTML, then text from markdown (used in search)
+            const articleHtml = article.default.render().html
+            const articleText = convert(articleHtml, {
+                wordwrap: false,
+                selectors: [
+                    // { selector: 'a', options: { ignoreHref: true } },
+                    // { selector: 'img', format: 'skip' },
+                ]
+            })
+
+            metadata.content = articleText
 
             return {
                 meta: metadata,
