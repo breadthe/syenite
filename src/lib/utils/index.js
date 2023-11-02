@@ -126,3 +126,14 @@ export const prettyDate = (date) => {
         day: 'numeric',
     })
 }
+
+// checks if a string is a URL
+export const isUrl = (string) => {
+    try {
+        new URL(string)
+    } catch (_) {
+        return false
+    }
+
+    return true
+}

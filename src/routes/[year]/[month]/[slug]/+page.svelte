@@ -3,6 +3,7 @@
 	import { toc, createTocStore } from '@svelte-put/toc';
 	import ArticlesTagged from '$components/ArticlesTagged.svelte';
 	import Heading from '$components/Heading.svelte';
+	import HeroImage from '$components/HeroImage.svelte';
 	import Tags from '$components/Tags.svelte';
 	import TOC from '$components/TableOfContents.svelte';
 	import UpdatedAt from '$components/UpdatedAt.svelte';
@@ -51,8 +52,8 @@
 	<meta name="twitter:creator" content={'@' + AUTHOR_TWITTER_HANDLE} />
 	<meta name="twitter:title" content={data.title} />
 	<meta name="twitter:description" content={data.description} />
-	<meta property="og:image" content={image} />
-	<meta name="twitter:image" content={image} />
+	<meta property="og:image" content={data.image ?? image} />
+	<meta name="twitter:image" content={data.image ?? image} />
 </svelte:head>
 
 <Heading centerH1={true}>
@@ -75,6 +76,8 @@
 		<Tags tags={data.tags} />
 	</div>
 </Heading>
+
+<HeroImage image={data.image} imageCredits={data.image_credits} title={data.title} />
 
 <hr />
 
