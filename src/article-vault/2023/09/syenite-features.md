@@ -42,7 +42,8 @@ These are all the features that the Syenite blog engine currently offers. Check 
 
 ## Content/SEO
 
-- "More articles tagged xxx" at the bottom of articles
+- **Hero image** in frontmatter
+- "More **articles tagged** xxx" at the bottom of articles
 
 ## Styling
 

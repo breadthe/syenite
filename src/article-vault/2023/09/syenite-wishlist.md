@@ -17,7 +17,6 @@ For more detailed notes, check out the [[syenite-v0.2|v0.2]] and [[syenite-v0.3|
 
 ## Content/SEO
 
-- Hero image in frontmatter
 - "Latest (10) articles" component, to be used on landing page and/or bottom of each article
 
 ## General

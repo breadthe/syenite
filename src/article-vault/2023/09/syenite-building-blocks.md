@@ -96,9 +96,7 @@ should resolve to
 - https://github.com/remarkjs/remark-html - extracts HTML from markdown, used for the RSS feed
 - https://github.com/paoloricciuti/sveltekit-search-params - makes working with URL search parameters a lot easier
 - https://github.com/leeoniya/uFuzzy - fuzzy search for articles
-- ~~https://github.com/ejrbuss/markdown-to-txt - transforms markdown to plaintext to make it easy to search~~ no bueno, has a bug https://github.com/ejrbuss/markdown-to-txt/issues/20 (needs lodash). Alternatives:
-	- https://github.com/showdownjs/showdown - extract HTML from markdown, then get the text node
-	- https://github.com/earldouglas/codedown - not what I need, used for extracting code blocks
+- https://github.com/html-to-text/node-html-to-text - extracts text from HTML (article HTML is first processed using remark), used for searching article content
 
 ## Other
 
