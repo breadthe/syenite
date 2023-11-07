@@ -15,6 +15,13 @@ export async function GET({ fetch }) {
     const response = await fetch(`/api/articles`)
     const articles = await response.json()
 
+    // strip data-svelte-h attributes from HTML
+    const stripDataSvelteH = (htmlString) => {
+        const strippedHtml = htmlString.replace(/\s*data-svelte-h="[^"]*"/g, '');
+
+        return strippedHtml;
+    }
+
     articles.forEach((article) => {
         // extract HTML from markdown
         const htmlDescription = remark()
@@ -27,7 +34,7 @@ export async function GET({ fetch }) {
             date: article.meta.published,
             description: htmlDescription.toString(),
             custom_elements: [
-                { "content:encoded": article.content }
+                { "content:encoded": stripDataSvelteH(article.content) }
             ],
         });
     });
