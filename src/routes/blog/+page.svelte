@@ -5,6 +5,7 @@
 	import Heading from '$components/Heading.svelte'
 	import ArticleCard from '$components/ArticleCard.svelte'
 	import Search from '$components/Search.svelte'
+	import { convert } from 'html-to-text'
 
 	const searchStr = queryParam('search', ssp.string(), { debounceHistory: 500 })
 
@@ -17,6 +18,16 @@
 	$: {
 		if (data.articles.length > 0) {
 			flatArticles = data.articles.map((article) => {
+				// Extract HTML, then text from markdown (used in search)
+				const articleHtml = article.content
+				const articleText = convert(articleHtml, {
+					wordwrap: false,
+					selectors: [
+						// { selector: 'a', options: { ignoreHref: true } },
+						// { selector: 'img', format: 'skip' },
+					]
+				})
+
 				return (
 					article.meta.title +
 					' ' +
@@ -24,7 +35,7 @@
 					' ' +
 					article.meta.tags.join(' ') +
 					' ' +
-					article.meta.content
+					articleText
 				)
 			})
 		}
@@ -48,10 +59,10 @@
 				return data.articles[idx]
 			})
 		} else if ($searchStr) {
-            filteredArticles = []
+			filteredArticles = []
 		} else {
 			filteredArticles = data.articles
-        }
+		}
 	}
 </script>
 
@@ -75,7 +86,9 @@
 <Search />
 
 {#if $searchStr}
-    <p class="text-center">{filteredArticles.length} result{filteredArticles.length > 1 ? 's' : '' } for "<strong>{$searchStr}</strong>"</p>
+	<p class="text-center">
+		{filteredArticles.length} result{filteredArticles.length > 1 ? 's' : ''} for "<strong>{$searchStr}</strong>"
+	</p>
 {/if}
 
 {#each filteredArticles as article}

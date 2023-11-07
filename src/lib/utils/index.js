@@ -96,21 +96,10 @@ export const fetchMarkdownArticles = async () => {
             // transforms /src/article-vault/2021/01/article.md to /2021/01/article
             const articlePath = path.replace('article-vault/', '').slice(4, -3)
 
-            // Extracts HTML, then text from markdown (used in search)
-            const articleHtml = article.default.render().html
-            const articleText = convert(articleHtml, {
-                wordwrap: false,
-                selectors: [
-                    // { selector: 'a', options: { ignoreHref: true } },
-                    // { selector: 'img', format: 'skip' },
-                ]
-            })
-
-            metadata.content = articleText
-
             return {
                 meta: metadata,
                 path: articlePath,
+                content: article.default.render().html,
             }
         })
     )

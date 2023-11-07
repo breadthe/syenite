@@ -25,7 +25,10 @@ export async function GET({ fetch }) {
             title: article.meta.title,
             url: SITE_URL + `${article.path}`,
             date: article.meta.published,
-            description: htmlDescription.toString()
+            description: htmlDescription.toString(),
+            custom_elements: [
+                { "content:encoded": article.content }
+            ],
         });
     });
 
@@ -33,7 +36,7 @@ export async function GET({ fetch }) {
     return new Response(feed.xml({ indent: true }), {
         headers: {
             'Cache-Control': `public, max-age=${86400}`, // 24 hours
-            'Content-Type': 'application/rss+xml'
+            'Content-Type': 'application/xml' // formerly 'application/rss+xml', doesn't seem to render HTML article content well
         }
     })
 }
