@@ -1,10 +1,13 @@
 <script>
-    import { SITE_TITLE, DEFAULT_OG_IMAGE } from '$lib/config.js'
+    import { SITE_URL, SITE_TITLE, DEFAULT_OG_IMAGE } from '$lib/config.js'
 	import '$css/app.postcss'
 	import Header from '$components/Header.svelte'
 	import Footer from '$components/Footer.svelte'
 
     $: image = DEFAULT_OG_IMAGE
+
+    // strip http or https from SITE_URL
+    const siteUrl = SITE_URL.replace(/^(https?:\/\/)/, '');
 </script>
 
 <svelte:head>
@@ -14,6 +17,10 @@
 		title={'RSS Feed for ' + SITE_TITLE}
 		href="/rss.xml"
 	/>
+
+    <!-- Mastodon webmentions -->
+    <link rel="webmention" href={`https://webmention.io/${siteUrl}/webmention`} />
+    <link rel="pingback" href={`https://webmention.io/${siteUrl}/xmlrpc`} />
 
     <meta name="description" content={`${SITE_TITLE} opinionated af static blog engine`} />
 	<meta property="og:image" content={image} />
