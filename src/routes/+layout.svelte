@@ -1,5 +1,5 @@
 <script>
-    import { SITE_URL, SITE_TITLE, DEFAULT_OG_IMAGE } from '$lib/config.js'
+    import { SITE_URL, SITE_TITLE, DEFAULT_OG_IMAGE, AUTHOR_URL } from '$lib/config.js'
 	import '$css/app.postcss'
 	import Header from '$components/Header.svelte'
 	import Footer from '$components/Footer.svelte'
@@ -19,6 +19,7 @@
 	/>
 
     <!-- Mastodon webmentions -->
+    <link href={AUTHOR_URL} rel="me">
     <link rel="webmention" href={`https://webmention.io/${siteUrl}/webmention`} />
     <link rel="pingback" href={`https://webmention.io/${siteUrl}/xmlrpc`} />
 
