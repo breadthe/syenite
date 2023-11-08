@@ -34,7 +34,7 @@ export async function GET({ fetch }) {
             date: article.meta.published,
             description: htmlDescription.toString(),
             custom_elements: [
-                { "content:encoded": `<![CDATA[${stripDataSvelteH(article.content)}]]` }
+                { "content:encoded": `<![CDATA[${stripDataSvelteH(article.content)}]]>` }
             ],
         });
     });
