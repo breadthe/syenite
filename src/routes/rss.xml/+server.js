@@ -34,7 +34,11 @@ export async function GET({ fetch }) {
             date: article.meta.published,
             description: htmlDescription.toString(),
             custom_elements: [
-                { "content:encoded": `<![CDATA[ ${stripDataSvelteH(article.content)} ]]>` }
+                {
+                    "content:encoded": {
+                        _cdata: stripDataSvelteH(article.content),
+                    }
+                },
             ],
         });
     });
@@ -43,7 +47,7 @@ export async function GET({ fetch }) {
     return new Response(feed.xml({ indent: true }), {
         headers: {
             'Cache-Control': `public, max-age=${86400}`, // 24 hours
-            'Content-Type': 'application/xml' // formerly 'application/rss+xml', doesn't seem to render HTML article content well
+            'Content-Type': 'application/rss+xml' // formerly 'application/rss+xml', doesn't seem to render HTML article content well
         }
     })
 }

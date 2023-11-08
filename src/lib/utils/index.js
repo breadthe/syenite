@@ -1,5 +1,4 @@
 import { fdir } from 'fdir'
-import { convert } from 'html-to-text'
 
 // Transforms Obsidian links and images to relative HTML anchors and image links
 export const transformObsidianLinks = ({ content, filename }) => {
