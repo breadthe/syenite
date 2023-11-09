@@ -3,6 +3,7 @@ title: Draft article
 description: Example of an article in the _drafts folder
 author:
 author_url:
+mastodon_toot_url:
 image: example.jpg
 image_credits: https://example.com
 published: 2023-09-04T14:30

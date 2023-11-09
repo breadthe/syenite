@@ -4,7 +4,7 @@ description: How to configure global site parameters using the config file
 author:
 author_url:
 published: 2023-09-26T14:30
-updated: 
+updated: 2023-11-09T07:30
 tags:
   - syenite
 ---
@@ -19,11 +19,14 @@ Parameter | Default value
 ---|---
 SITE_URL | `'https://example.com'`
 SITE_TITLE | `'Syenite'`
-SITE_DESCRIPTION | `'Blog engine with SvelteKit + Obsidian'`
+SITE_DESCRIPTION | `'Static blog engine with SvelteKit + Obsidian'`
 DEFAULT_OG_IMAGE | `SITE_URL + '/og.jpeg'`
 AUTHOR | `'breadthe'`
 AUTHOR_URL | `'https://github.com/breadthe'`
 AUTHOR_TWITTER_HANDLE  | `''`
+WEBMENTION_IO_API_URL  | `'https://webmention.io/api/mentions.jf2'`
+AUTHOR_MASTODON_SERVER  | `'https://indieweb.social/'`
+AUTHOR_MASTODON_HANDLE  | `'@brbcoding'`
 
 You can import any of these parameters in any file with
 
