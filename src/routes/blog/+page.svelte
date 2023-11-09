@@ -74,13 +74,17 @@
 <Heading>
 	{SITE_TITLE} Blog
 
-	<p slot="description">
-		Esse ipsum voluptate qui aliqua sunt ipsum duis excepteur aliqua enim irure adipisicing enim. Dolore aliquip
-		exercitation excepteur mollit fugiat. Ullamco incididunt pariatur reprehenderit do exercitation adipisicing tempor.
-		Voluptate mollit minim ex dolore nisi veniam quis ullamco nostrud culpa magna Lorem id. Reprehenderit minim ea elit
-		nostrud sit sunt officia amet sunt elit est. Tempor do ut anim ex ea qui aute veniam quis occaecat. Laborum nulla ad
-		magna ea sit elit id nulla mollit nulla.
-	</p>
+	<div slot="description">
+        <p>
+            What better way to test a blog engine than to blog about building it? This is where I'll be posting updates about the development of {SITE_TITLE}. There will be two main types of articles here: <strong>releases</strong> and <strong>building blocks</strong>.
+        </p>
+        <p>
+            <strong>Release</strong> articles are all about showcasing all the new features that I added/updated/fixed in the last version increment.
+        </p>
+        <p>
+            <strong>Building block</strong> articles dive deeper into the code and explain how I built a specific feature. These articles are meant to be more technical and are aimed at developers who want to learn what makes {SITE_TITLE} tick.
+        </p>
+	</div>
 </Heading>
 
 <Search />
@@ -96,3 +100,12 @@
 
 	<ArticleCard {article} />
 {/each}
+
+<style>
+    p {
+        margin-bottom: theme('spacing.4');
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+</style>
