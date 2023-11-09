@@ -1,12 +1,16 @@
 /** @type {import('tailwindcss').Config}*/
 const config = {
-	content: ['./src/**/*.{html,js,svelte,ts}'],
+    content: ['./src/**/*.{html,js,svelte,ts}'],
 
-	theme: {
-		extend: {}
-	},
+    theme: {
+        extend: {
+            colors: {
+                "mastodon-purple": "#595aff",
+            }
+        }
+    },
 
-	plugins: []
+    plugins: []
 };
 
 module.exports = config;

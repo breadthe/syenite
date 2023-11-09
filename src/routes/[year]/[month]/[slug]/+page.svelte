@@ -4,6 +4,7 @@
 	import ArticlesTagged from '$components/ArticlesTagged.svelte';
 	import Heading from '$components/Heading.svelte';
 	import HeroImage from '$components/HeroImage.svelte';
+	import MastodonShareBtn from '$components/MastodonShareBtn.svelte';
 	import Tags from '$components/Tags.svelte';
 	import TOC from '$components/TableOfContents.svelte';
 	import UpdatedAt from '$components/UpdatedAt.svelte';
@@ -83,13 +84,19 @@
 
 <TOC {tocStore} />
 
-<article class="markdown-body mb-16" use:toc={{ store: tocStore, observe: true }}>
+<article class="markdown-body" use:toc={{ store: tocStore, observe: true }}>
 	{#if data.updated}
 		<UpdatedAt updatedAt={data.updated} />
 	{/if}
 
 	<svelte:component this={data.content} />
 </article>
+
+<hr />
+<div class="flex items-center gap-4">
+    Share on
+    <MastodonShareBtn pageUrl={canonical} pageDescription={data.description} />
+</div>
 
 {#if data.tags.length > 0}
 	<hr />
