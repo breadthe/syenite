@@ -13,7 +13,7 @@ export async function load({ params, url, fetch }) {
 
     const slug = params.slug
     const content = article.default
-    const { title, description, author, author_url, image, image_credits, published, updated, tags } = article.metadata
+    const { title, description, author, author_url, mastodon_toot_url, image, image_credits, published, updated, tags } = article.metadata
 
     // Build previous and next article links
     const response = await fetch(`/api/articles`)
@@ -35,6 +35,7 @@ export async function load({ params, url, fetch }) {
         description,
         author: author || AUTHOR,
         author_url: author_url || AUTHOR_URL,
+        mastodon_toot_url,
         image: heroImageUrl,
         image_credits,
         published,

@@ -5,6 +5,7 @@
 	import Heading from '$components/Heading.svelte';
 	import HeroImage from '$components/HeroImage.svelte';
 	import MastodonShareBtn from '$components/MastodonShareBtn.svelte';
+	import MastodonWebmention from '$components/MastodonWebmention.svelte';
 	import Tags from '$components/Tags.svelte';
 	import TOC from '$components/TableOfContents.svelte';
 	import UpdatedAt from '$components/UpdatedAt.svelte';
@@ -93,6 +94,9 @@
 </article>
 
 <hr />
+
+<MastodonWebmention pageUrl={canonical} mastodonTootUrl={data.mastodon_toot_url} />
+
 <div class="flex items-center gap-4">
     Share on
     <MastodonShareBtn pageUrl={canonical} pageDescription={data.description} />
