@@ -11,6 +11,8 @@
 	let replies = []
 
 	async function loadWebmentions() {
+        console.log(`pageUrl = ${pageUrl}`);
+        console.log(`mastodonTootUrl = ${mastodonTootUrl}`);
 		if (mastodonTootUrl?.length === 0) return
 
 		let mentions = await getMentions(pageUrl)
