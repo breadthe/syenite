@@ -60,11 +60,11 @@
 </script>
 
 {#if mastodonTootUrl?.length || replies.length || boosts.length || favorites.length}
-	<div class="my-4 flex flex-col gap-4">
+	<div class="flex flex-col gap-4">
 		{#if mastodonTootUrl?.length}
 			<a
 				href={mastodonTootUrl}
-				class="w-full p-2 text-center text-xl text-mastodon-purple hover:text-white bg-indigo-100 hover:bg-mastodon-purple rounded font-bold"
+				class="w-full bg-mastodon-purple/90 hover:bg-mastodon-purple text-lg text-white text-center hover:no-underline rounded font-mono px-8 py-1"
 				target="_blank"
 			>
 				Discuss this article on Mastodon
@@ -72,7 +72,7 @@
 		{/if}
 
 		{#if replies.length}
-			<h6 class="mb-2 text-xl text-mastodon-purple font-bold">Replies</h6>
+			<h6 class="text-xl text-mastodon-purple font-bold">Replies</h6>
 
 			<div class="flex flex-col gap-2">
 				{#each replies as reply (reply.url)}
@@ -107,7 +107,7 @@
 		{/if}
 
 		{#if boosts.length}
-			<h6 class="mb-2 text-xl text-mastodon-purple font-bold">Boosted</h6>
+			<h6 class="text-xl text-mastodon-purple font-bold">Boosted</h6>
 
 			<div class="flex flex-wrap gap-2">
 				{#each boosts as boost (boost.url)}
@@ -119,7 +119,7 @@
 		{/if}
 
 		{#if favorites.length}
-			<h6 class="mb-2 text-xl text-mastodon-purple font-bold">Favorited</h6>
+			<h6 class="text-xl text-mastodon-purple font-bold">Favorited</h6>
 
 			<div class="flex flex-wrap gap-2">
 				{#each favorites as favorite (favorite.url)}
