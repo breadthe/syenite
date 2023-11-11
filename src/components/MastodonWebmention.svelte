@@ -11,8 +11,6 @@
 	let replies = []
 
 	async function loadWebmentions() {
-        console.log(`pageUrl = ${pageUrl}`);
-        console.log(`mastodonTootUrl = ${mastodonTootUrl}`);
 		if (mastodonTootUrl?.length === 0) return
 
 		let mentions = await getMentions(pageUrl)
@@ -35,7 +33,7 @@
 		const perPage = 100
 
 		while (true) {
-			const results = await fetch(`${WEBMENTION_IO_API_URL}?target=${pageUrl}/&per-page=${perPage}&page=${page}`).then(
+			const results = await fetch(`${WEBMENTION_IO_API_URL}?target=${pageUrl}&per-page=${perPage}&page=${page}`).then(
 				(r) => r.json()
 			)
 
