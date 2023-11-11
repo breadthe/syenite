@@ -6,7 +6,7 @@ author_url:
 mastodon_toot_url: https://indieweb.social/@brbcoding/111381002830455161
 image: 
 image_credits: 
-published: 2023-11-09T07:30
+published: 2023-11-11T07:30
 updated:
 tags:
   - syenite
@@ -83,11 +83,35 @@ Go to [fed.brid.gy](https://fed.brid.gy/) and click on "Cross-post to a Mastodon
 
 Next it'll ask for your site URL. For me that would be `https://syenite.vercel.app/`.
 
+## Post a link to the article on Mastodon
+
+On Mastodon make a new post which includes the exact link to the article, `https://syenite.vercel.app/2023/11/mastodon-webmentions` in this case. Grab the Mastodon toot URL which looks like this `https://indieweb.social/@brbcoding/111381002830455161`.
+
+Now go back to the article itself and add the URL to the `mastodon_tool_url` frontmatter. Then publish it again. Once people start replaying / favoriting / boosting your toot, they'll start appearing on your article.
+
+The cool thing about this is that you'll be able to see the mentions in your local environment as well (`npm run dev`), so you can easily debug or adjust the design.
+
 ## Displaying the webmentions
 
 Now that the blog is wired up with Mastodon it's time to get any mentions via the webmention.io API and display them at the bottom of each article.
 
-WIP - I'll link to the actual implementation once I test it.
+![[mastodon-webmentions-displayed.jpg]]
+
+The article page is at `src/routes/[year]/[month]/[slug]/+page.svelte`.
+
+It imports 2 components for Mastodon webmentions:
+- `src/components/MastodonShareBtn.svelte` - renders the Mastodon share button.
+- `src/components/MastodonWebmention.svelte` - polls the webmention.io API when the component loads, and renders the webmentions. You can certainly make it refresh periodically if needed, but I think that's overkill, so I didn't bother.
+
+## Conclusion
+
+Thanks to [Coding with Jesse](https://www.codingwithjesse.com/) I was able to implement Mastodon webmentions on 2 different blogs. This one was even easier than the first, because most of the plumbing was in place. All I had to do was be very careful wiring things up with the 3rd party services, and convert a couple of Vue components to Svelte.
+
+Unfortunately it's not all roses and butterflies. A couple of people have already pointed out on Mastodon that this type of commenting system has some privacy implications, and now I'm having second thoughts about adding webmentions.
+
+I am torn on this. I love the Mastodon community and chill vibe, and I would like to bring some of that discussion to my blog. It really feels like there's no good option for integrating blog comments that stands head and shoulders above all others.
+
+My plan is to leave support for it built in since I did the work of implementing it, but add a config flag to turn it off if you want. I mean, it's likely that no one but me will use this blog engine but still...
 
 
 
