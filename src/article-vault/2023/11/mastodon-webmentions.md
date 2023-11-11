@@ -3,7 +3,7 @@ title: Mastodon webmentions as comments
 description: Syenite now has support for Mastodon webmentions in lieu of a commenting system
 author:
 author_url:
-mastodon_toot_url: 
+mastodon_toot_url: https://indieweb.social/@brbcoding/111381002830455161
 image: 
 image_credits: 
 published: 2023-11-09T07:30
