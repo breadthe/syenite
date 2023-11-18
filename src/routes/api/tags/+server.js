@@ -8,6 +8,9 @@ export const GET = async ({ url }) => {
 
     const allArticles = await fetchMarkdownArticles()
 
+    // sort articles in reverse chronological order
+    const sortedArticles = allArticles.sort((a, b) => new Date(b.meta.published) - new Date(a.meta.published))
+
     // associate each tag with the articles that have it
     const assignArticleToTag = (tag, article) => {
         if (tags.has(tag)) {
@@ -18,13 +21,13 @@ export const GET = async ({ url }) => {
     }
 
     if (tag) {
-        const filteredArticles = allArticles.filter(article => article.meta.tags.includes(tag))
+        const filteredArticles = sortedArticles.filter(article => article.meta.tags.includes(tag))
 
         for (const article of filteredArticles) {
             assignArticleToTag(tag, article)
         }
     } else {
-        for (const article of allArticles) {
+        for (const article of sortedArticles) {
             for (const tag of article.meta.tags) {
                 assignArticleToTag(tag, article)
             }
