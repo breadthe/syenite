@@ -1,5 +1,5 @@
 <script>
-	import { SITE_URL, AUTHOR_TWITTER_HANDLE } from '$lib/config.js';
+	import { SITE_URL, AUTHOR_TWITTER_HANDLE, SHOW_WEBMENTIONS } from '$lib/config.js';
 	import { toc, createTocStore } from '@svelte-put/toc';
 	import ArticlesTagged from '$components/ArticlesTagged.svelte';
 	import Heading from '$components/Heading.svelte';
@@ -95,7 +95,9 @@
 
 <hr />
 
-<MastodonWebmention pageUrl={canonical} mastodonTootUrl={data.mastodon_toot_url} />
+{#if SHOW_WEBMENTIONS}
+    <MastodonWebmention pageUrl={canonical} mastodonTootUrl={data.mastodon_toot_url} />
+{/if}
 
 <div class="flex items-center gap-4">
     Share on
