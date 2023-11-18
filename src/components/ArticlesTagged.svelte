@@ -5,7 +5,7 @@
 	export let tag;
 	export let articlePath;
 
-	$: serverUrl = `/api/tags?tag=${tag}`;
+	$: serverUrl = `/api/tags?tag=${tag}&sort_by=published&order=desc`;
 
 	// passing tag to trick it into being responsive
 	async function getTags(tag) {

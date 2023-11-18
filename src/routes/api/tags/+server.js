@@ -1,15 +1,17 @@
-import { fetchMarkdownArticles } from '$lib/utils'
+import { fetchMarkdownArticles, sortArticles } from '$lib/utils'
 import { json } from '@sveltejs/kit'
 
 export const GET = async ({ url }) => {
     const tag = url.searchParams.get('tag')
+    const sort_by = url.searchParams.get('sort_by') ?? 'published' // meta.published or meta.updated
+    const order = url.searchParams.get('order') ?? 'desc' // asc or desc
 
     const tags = new Map()
 
     const allArticles = await fetchMarkdownArticles()
 
     // sort articles in reverse chronological order
-    const sortedArticles = allArticles.sort((a, b) => new Date(b.meta.published) - new Date(a.meta.published))
+    const sortedArticles = sortArticles(allArticles, sort_by, order);
 
     // associate each tag with the articles that have it
     const assignArticleToTag = (tag, article) => {

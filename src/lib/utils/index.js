@@ -106,6 +106,16 @@ export const fetchMarkdownArticles = async () => {
     return allArticles
 }
 
+// sorts articles by published or updated date, in ascending or descending order
+export const sortArticles = (articles, sort_by, order) => {
+    const sort_param = sort_by === 'published' ? 'published' : 'updated'
+    if (order === 'desc') {
+        return articles.sort((a, b) => new Date(b.meta[sort_param]) - new Date(a.meta[sort_param]))
+    }
+
+    return articles.sort((a, b) => new Date(a.meta[sort_param]) - new Date(b.meta[sort_param]))
+}
+
 // transforms 2023-07-10T00:00 to July 10, 2023
 export const prettyDate = (date) => {
     return new Date(date).toLocaleDateString('en-US', {
